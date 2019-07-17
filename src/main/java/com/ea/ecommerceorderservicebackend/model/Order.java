@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "order_table")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+//@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class Order {
     private Long accountId;
     private String orderNumber;
     @Column(name = "order_lines")
-    @JsonManagedReference(value = "order")
+   // @JsonManagedReference(value = "order")
     @OneToMany(mappedBy = "order")
     private List<OrderLine> orderLines = new ArrayList<>();
     private Date orderDate;

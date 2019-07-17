@@ -64,4 +64,12 @@ public class OrderController {
 
         return orderService.createOrderLine(orderLine);
     }
+    @PostMapping("addOrder")
+    public Order addOrder(@RequestBody Order order){
+        return orderService.addOrder(order);
+    }
+    @GetMapping("getOrders/{id}")
+    public List<Order> getAllOrdersByAccount(@PathVariable Long id) {
+        return orderService.findAllByAccountId(id);
+    }
 }
